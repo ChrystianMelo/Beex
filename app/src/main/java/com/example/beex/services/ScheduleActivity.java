@@ -1,12 +1,18 @@
 package com.example.beex.services;
 
+import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.beex.R;
+import com.example.beex.repository.FieldVerification;
+import com.example.beex.repository.Mask.MaskEmail;
 
 public class ScheduleActivity extends AppCompatActivity {
 
@@ -25,5 +31,10 @@ public class ScheduleActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(adapter);
+
+    }
+
+    public void goBack(View v){
+        finish();
     }
 }

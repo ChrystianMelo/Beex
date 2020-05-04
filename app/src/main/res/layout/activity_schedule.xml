@@ -19,7 +19,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/backaaaa" />
 
 
     <View
@@ -51,7 +51,8 @@
         app:layout_constraintTop_toBottomOf="@+id/Divisor1" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/backaaaa"
+        android:onClick="goBack"
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:layout_constraintStart_toStartOf="parent"

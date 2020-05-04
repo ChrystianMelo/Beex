@@ -27,6 +27,8 @@
         <activity android:name=".view.RecoveryPassword"></activity>
         <activity android:name=".view.HomeScreen"></activity>
         <activity android:name=".view.CreateAccount"></activity>
+        <activity android:name=".services.ScheduleActivity"></activity>
+
 
         <meta-data
             android:name="preloaded_fonts"

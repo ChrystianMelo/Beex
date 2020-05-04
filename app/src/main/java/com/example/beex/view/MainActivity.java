@@ -11,6 +11,7 @@ import android.widget.RelativeLayout;
 
 import com.example.beex.R;
 import com.example.beex.repository.FieldVerification;
+import com.example.beex.services.ScheduleActivity;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -84,7 +85,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void Create(View v){
+    /*public void Create(View v){
         startActivity(new Intent(this,CreateAccount.class));
+    }*/
+
+    public void Create(View v){
+        startActivity(new Intent(this, ScheduleActivity.class));
     }
+
+
 }

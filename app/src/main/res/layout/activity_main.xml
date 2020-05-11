@@ -53,7 +53,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id = "@+id/passLayout"
-            android:hint = "@string/pass"
+            android:hint = "@string/tilPass"
             android:textColorHint="@color/textColor"
             android:textSize="14sp"
             app:startIconDrawable="@drawable/ic_pass"

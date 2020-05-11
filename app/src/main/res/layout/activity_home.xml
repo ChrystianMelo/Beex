@@ -18,17 +18,4 @@
         tools:ignore="PrivateResource"
         android:contentDescription="@string/todo" />
 
-    <TextView
-        android:id="@+id/create"
-        android:text="@string/homeScreen"
-        android:layout_marginBottom="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/textColor"
-        android:textStyle="italic"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:textSize="10sp"
-        tools:ignore="SmallSp" />
-
 </RelativeLayout>

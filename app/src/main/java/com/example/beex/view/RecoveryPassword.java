@@ -1,11 +1,9 @@
 package com.example.beex.view;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -13,12 +11,14 @@ import android.widget.TextView;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.beex.R;
-import com.example.beex.repository.FieldVerification;
-import com.example.beex.repository.Mask.MaskEmail;
-import com.example.beex.repository.Mask.MaskTextWatcher;
-import com.example.beex.repository.Mask.SimpleMaskFormatter;
+import com.example.beex.utils.FieldVerification;
+import com.example.beex.utils.Mask.MaskEmail;
+import com.example.beex.utils.Mask.MaskTextWatcher;
+import com.example.beex.utils.Mask.SimpleMaskFormatter;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+
+import java.util.Objects;
 
 public class RecoveryPassword extends AppCompatActivity {
 
@@ -48,7 +48,7 @@ public class RecoveryPassword extends AppCompatActivity {
     private void getArgs() {
         Intent i = getIntent();
         Bundle extras = i.getExtras();
-        if(extras.containsKey("email")) {
+        if (extras != null && extras.containsKey("email")) {
             this.email = i.getStringExtra("email");
         }
     }
@@ -75,7 +75,7 @@ public class RecoveryPassword extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 FieldVerification fv = new FieldVerification();
-                fv.setCpf(cpf.getText().toString());
+                fv.setCpf(Objects.requireNonNull(cpf.getText()).toString());
 
                 if (fv.cpfVerification()){
                     cpfLayout.setError(null);

@@ -1,9 +1,9 @@
-package com.example.beex.repository;
+package com.example.beex.utils;
 
 public class FieldVerification {
-    String email  = "aaa@gmail.com";
-    String cpf    = "111.111.111-11";
-    String pass   = "abc45678";
+    private String email;
+    private String cpf;
+    private String pass;
 
     public void setEmail(String email) {
         this.email = email;
@@ -24,22 +24,15 @@ public class FieldVerification {
     }*/
 
     public boolean cpfVerification(){
-        if (!cpf.isEmpty() &&
-                cpf.length() == 14)
-            return true;
-        return false;
+        return cpf.length() == 14;
     }
 
     public boolean emailVerification(){
-        if (!email.isEmpty() &&
+        return !email.isEmpty() &&
                 email.indexOf('.') != -1 &&
-                email.indexOf('@') != -1)
-            return true;
-        return false;
+                email.indexOf('@') != -1;
     }
     public boolean passVerification(){
-        if (!pass.isEmpty())
-            return true;
-        return false;
+        return !pass.isEmpty();
     }
 }

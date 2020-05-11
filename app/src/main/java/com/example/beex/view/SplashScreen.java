@@ -1,10 +1,9 @@
-package com.example.beex.repository;
+package com.example.beex.view;
 
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.beex.view.MainActivity;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -17,3 +16,14 @@ public class SplashScreen extends AppCompatActivity {
         finish();
     }
 }
+
+
+
+/*
+VIEW: visualização
+VIEWMODEL: receber informações direto do view
+REPOSITORIO: Tratar informações
+SERVICES: comunicação banco de dados
+UTILS:
+*
+* */

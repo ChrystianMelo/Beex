@@ -1,57 +1,31 @@
-package com.example.beex.repository.Mask;
+package com.example.beex.utils.Mask;
 
 import java.util.HashMap;
 
 /**
  * Created by Tox on 12/8/15.
  */
-public class MaskFormatter {
+class MaskFormatter {
 
     /**
      * String pattern that represents the mask used by {@link #format(String)} method
      * All mask characters should have been registered with registerPattern
      */
-    protected String mask;
+    private String mask;
 
     /**
      * Used to register all available patterns
      * The Key is used to map all available characters mask
      */
-    protected HashMap<String, MaskPattern> patternMap;
+    private HashMap<String, MaskPattern> patternMap;
 
     /**
      * Constructor
      */
-    public MaskFormatter(String mask) {
+    MaskFormatter(String mask) {
         super();
         this.patternMap = new HashMap<>();
         this.mask = mask;
-    }
-
-    /**
-     * @return String representing the current mask.
-     */
-    public String getMask() {
-        return mask;
-    }
-
-    /**
-     * All mask characters should have been registered with {@link #registerPattern(MaskPattern)}
-     * or {@link #registerPattern(String, MaskPattern)}
-     *
-     * @param mask String pattern that represents the mask used by {@link #format(String)} method
-     */
-    public void setMask(String mask) {
-        this.mask = mask;
-    }
-
-    /**
-     * Register a {@link MaskPattern}
-     *
-     * @param pattern {@link MaskPattern} that will be used to validate the mask.
-     */
-    public void registerPattern(MaskPattern pattern) {
-        registerPattern(pattern.getPattern(), pattern);
     }
 
     /**
@@ -60,7 +34,7 @@ public class MaskFormatter {
      * @param key     String key that represents the mask
      * @param pattern {@link MaskPattern} that will be used to validate the mask
      */
-    public void registerPattern(String key, MaskPattern pattern) {
+    void registerPattern(String key, MaskPattern pattern) {
         patternMap.put(key, pattern);
     }
 
@@ -71,7 +45,7 @@ public class MaskFormatter {
      * @param newText String to format
      * @return Formatted string
      */
-    public String format(String newText) {
+    String format(String newText) {
         if (newText == null || "".equals(newText))
             return "";
 
@@ -96,8 +70,6 @@ public class MaskFormatter {
                 if (patternMap.containsKey(pattern)) {
                     patternFound = patternMap.get(pattern);
 
-                    buffer = new StringBuilder();
-
                     // Looks for the index of a char inside newText that matches the current
                     // patternFound pattern.
                     int nextIndex = indexOfValidChar(patternFound, newText, newTextOffset);
@@ -107,7 +79,9 @@ public class MaskFormatter {
                         // Get the valid character
                         char nextChar = newText.charAt(nextIndex);
 
-                        result.append(patternFound.transform(nextChar));
+                        if (patternFound != null) {
+                            result.append(patternFound.transform(nextChar));
+                        }
                         numOfLiterals = 0;
 
                         // If there aren't any character left
@@ -145,7 +119,7 @@ public class MaskFormatter {
      * @param offset          Offset number for the next valid index
      * @return Index of the first valid match
      */
-    protected int indexOfValidChar(MaskPattern patternMaskChar, String text, int offset) {
+    private int indexOfValidChar(MaskPattern patternMaskChar, String text, int offset) {
         for (int i = offset; i < text.length(); i++) {
             char c = text.charAt(i);
             if (patternMaskChar.isValid(text, c))

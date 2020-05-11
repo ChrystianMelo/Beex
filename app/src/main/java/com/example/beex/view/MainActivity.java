@@ -1,8 +1,10 @@
 package com.example.beex.view;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,10 +12,11 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.example.beex.R;
-import com.example.beex.repository.FieldVerification;
-import com.example.beex.services.ScheduleActivity;
+import com.example.beex.utils.FieldVerification;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+
+import java.util.Objects;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -49,11 +52,12 @@ public class MainActivity extends AppCompatActivity {
     private void setButtonFunctions() {
         final Intent home = new Intent(this, HomeScreen.class);
         login.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
             @Override
             public void onClick(View v) {
                 FieldVerification fv = new FieldVerification();
-                fv.setEmail(mail.getText().toString());
-                fv.setPass(pass.getText().toString());
+                fv.setEmail(Objects.requireNonNull(mail.getText()).toString());
+                fv.setPass(Objects.requireNonNull(pass.getText()).toString());
 
                 if (fv.emailVerification() && fv.passVerification()){
                     passLayout.setError(null);
@@ -75,9 +79,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void Recover(View v){
         FieldVerification fv = new FieldVerification();
-        fv.setEmail(mail.getText().toString());
+        fv.setEmail(Objects.requireNonNull(mail.getText()).toString());
         if (fv.emailVerification()) {
                 Intent recover = new Intent(this,RecoveryPassword.class);
                 recover.putExtra("email", mail.getText().toString());

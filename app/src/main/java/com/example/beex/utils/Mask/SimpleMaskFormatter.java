@@ -1,4 +1,4 @@
-package com.example.beex.repository.Mask;
+package com.example.beex.utils.Mask;
 
 /**
  * Created by Tox on 12/8/15.
@@ -6,11 +6,11 @@ package com.example.beex.repository.Mask;
 public class SimpleMaskFormatter extends MaskFormatter {
 
     public static class SimpleMaskCharacter {
-        public static final String NUMBER = "N";
-        public static final String LETTER = "L";
-        public static final String ALPHANUMERIC = "A";
-        public static final String LOWERCASE = "l";
-        public static final String UPPERCASE = "U";
+        static final String NUMBER = "N";
+        static final String LETTER = "L";
+        static final String ALPHANUMERIC = "A";
+        static final String LOWERCASE = "l";
+        static final String UPPERCASE = "U";
     }
 
     public SimpleMaskFormatter(String mask) {

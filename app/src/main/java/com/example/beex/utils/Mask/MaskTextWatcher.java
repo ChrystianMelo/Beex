@@ -1,4 +1,4 @@
-package com.example.beex.repository.Mask;
+package com.example.beex.utils.Mask;
 
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -11,14 +11,14 @@ import android.widget.TextView;
  */
 public class MaskTextWatcher implements TextWatcher {
 
-    protected MaskFormatter formatter;
+    private MaskFormatter formatter;
 
     /**
      * A reference of watched TextView (or EditText)
      */
-    protected TextView textView;
+    private TextView textView;
 
-    protected String currentText;
+    private String currentText;
 
     public MaskTextWatcher(TextView textView, MaskFormatter formatter) {
         this.textView = textView;

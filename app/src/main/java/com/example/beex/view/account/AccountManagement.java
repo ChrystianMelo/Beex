@@ -22,7 +22,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import java.util.Objects;
 
 
-public class AccountManagment extends AppCompatActivity {
+public class AccountManagement extends AppCompatActivity {
 
     ImageView icon;
     RelativeLayout screen;
@@ -87,10 +87,11 @@ public class AccountManagment extends AppCompatActivity {
         FieldVerification fv = new FieldVerification();
         fv.setEmail(Objects.requireNonNull(mail.getText()).toString());
         if (fv.emailVerification()) {
+                mailLayout.setError(null);
                 Intent recover = new Intent(this, RecoveryPassword.class);
                 recover.putExtra("email", mail.getText().toString());
                 startActivity(recover);
-        }
+        }else mailLayout.setError("Digite um email válido!");
     }
 
     /*public void Create(View v){

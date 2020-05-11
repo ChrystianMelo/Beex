@@ -32,7 +32,7 @@ public class RecoveryPassword extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.password_recover);
+        setContentView(R.layout.activity_recover_pass);
 
         notify = findViewById(R.id.notify);
         send   = findViewById(R.id.send);

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.account.AccountManagment"
+    tools:context=".view.account.AccountManagement"
     android:background="@drawable/background">
 
     <ImageView
@@ -92,16 +92,16 @@
 
         <TextView
             android:id="@+id/forgotten"
-            android:text="@string/txtForgot"
-            android:layout_below="@+id/login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/textColor"
-            android:fontFamily="@font/abhaya_libre_semibold"
-            android:textSize="15sp"
-            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/login"
             android:layout_marginTop="20dp"
-            android:onClick="Recover" />
+            android:fontFamily="@font/abhaya_libre_semibold"
+            android:onClick="Recover"
+            android:text="@string/txtForgot"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/textColor"
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/create"

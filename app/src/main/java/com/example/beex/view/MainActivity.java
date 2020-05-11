@@ -13,6 +13,9 @@ import android.widget.RelativeLayout;
 
 import com.example.beex.R;
 import com.example.beex.utils.FieldVerification;
+import com.example.beex.view.account.RecoveryPassword;
+import com.example.beex.view.schedule.ScheduleActivity;
+import com.example.beex.view.feed.HomeScreen;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -84,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         FieldVerification fv = new FieldVerification();
         fv.setEmail(Objects.requireNonNull(mail.getText()).toString());
         if (fv.emailVerification()) {
-                Intent recover = new Intent(this,RecoveryPassword.class);
+                Intent recover = new Intent(this, RecoveryPassword.class);
                 recover.putExtra("email", mail.getText().toString());
                 startActivity(recover);
         }

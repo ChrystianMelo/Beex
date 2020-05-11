@@ -4,22 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.HomeScreen"
+    tools:context=".view.feed.HomeScreen"
     android:background="@drawable/background">
 
     <ImageButton
-        android:id="@+id/back"
+        android:id="@+id/imgbtnback"
         android:layout_width="40dp"
         android:layout_height="40dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:background="@null"
-        android:src="@drawable/ic_keyboard_arrow_left_black_24dp"
-        />
+        app:srcCompat="@drawable/ic_keyboard_arrow_left_black_24dp"
+        tools:ignore="PrivateResource"
+        android:contentDescription="@string/todo" />
 
     <TextView
         android:id="@+id/create"
-        android:text="Home Screen"
+        android:text="@string/homeScreen"
         android:layout_marginBottom="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

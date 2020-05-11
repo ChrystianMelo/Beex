@@ -1,4 +1,4 @@
-package com.example.beex.services;
+package com.example.beex.data.account.services;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,7 +12,5 @@ public class LoginService extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
     }
 }

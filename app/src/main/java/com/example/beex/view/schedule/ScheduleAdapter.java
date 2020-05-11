@@ -1,4 +1,4 @@
-package com.example.beex.view;
+package com.example.beex.view.schedule;
 
 import android.view.LayoutInflater;
 import android.view.View;

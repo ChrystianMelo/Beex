@@ -17,10 +17,10 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.RecoveryPassword"></activity>
-        <activity android:name=".view.HomeScreen"></activity>
-        <activity android:name=".view.CreateAccount"></activity>
-        <activity android:name=".view.SplashScreen"
+        <activity android:name=".view.account.RecoveryPassword"></activity>
+        <activity android:name=".view.feed.HomeScreen"></activity>
+        <activity android:name=".view.account.CreateAccount"></activity>
+        <activity android:name=".utils.SplashScreen"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,7 +28,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.ScheduleActivity"></activity>
+        <activity android:name=".view.schedule.ScheduleActivity"></activity>
 
 
         <meta-data

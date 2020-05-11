@@ -1,4 +1,4 @@
-package com.example.beex.view;
+package com.example.beex.view.account;
 
 import android.content.Intent;
 import android.os.Build;

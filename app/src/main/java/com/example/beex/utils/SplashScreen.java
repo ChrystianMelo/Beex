@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.beex.view.MainActivity;
+import com.example.beex.view.account.AccountManagment;
 
 
 public class SplashScreen extends AppCompatActivity {
@@ -13,7 +13,7 @@ public class SplashScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, AccountManagment.class);
         startActivity(intent);
         finish();
     }

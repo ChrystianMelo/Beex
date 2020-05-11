@@ -15,11 +15,12 @@
             app:layout_constraintTop_toTopOf="parent"
             android:background="@null"
             app:srcCompat="@drawable/ic_keyboard_arrow_left_black_24dp"
-            />
+            tools:ignore="PrivateResource"
+            android:contentDescription="@string/todo" />
 
         <TextView
             android:id="@+id/create"
-            android:text="Create new account"
+            android:text="@string/txtNewAcc"
             android:layout_marginBottom="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -27,6 +28,7 @@
             android:textStyle="italic"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:textSize="10dp"/>
+            android:textSize="10sp"
+            tools:ignore="SmallSp" />
 
 </RelativeLayout>

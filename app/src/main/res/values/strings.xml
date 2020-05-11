@@ -1,6 +1,15 @@
 <resources>
     <string name="app_name">Beex</string>
     <string name="pass">Senha</string>
-    <string name="todo">TODO</string>
     <string name="homeScreen">Home Screen</string>
+    <string name="txtCpf">Após inserir seu CPF, um link para a redefinição da senha será enviado ao seu E-mail.</string>
+    <string name="cpf">CPF</string>
+    <string name="btnSend">Enviar E-mail</string>
+    <string name="txtSent">Link enviado para</string>
+    <string name="txtNewAcc">Create new account</string>
+    <string name="txtNext">Próximos</string>
+    <string name="todo">TODO</string>
+    <string name="tilMail">E-mail</string>
+    <string name="btnLogin">LOGIN</string>
+    <string name="txtForgot">Esqueceu a senha?</string>
 </resources>

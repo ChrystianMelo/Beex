@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        />
+        android:contentDescription="@string/todo" />
 
     <RelativeLayout
         android:id="@+id/screen"
@@ -26,7 +26,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/mailLayout"
-            android:hint="E-mail"
+            android:hint="@string/tilMail"
             android:textColorHint="@color/textColor"
             android:textSize="14sp"
             app:startIconDrawable="@drawable/ic_user"
@@ -79,7 +79,7 @@
         <Button
             android:id="@+id/login"
             android:layout_below = "@+id/passLayout"
-            android:text="LOGIN"
+            android:text="@string/btnLogin"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_launcher_button"
@@ -87,31 +87,31 @@
             android:fontFamily="@font/roboto_thin"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            android:textSize="24dp"
+            android:textSize="24sp"
             />
 
         <TextView
             android:id="@+id/forgotten"
-            android:text="Esqueceu a senha?"
+            android:text="@string/txtForgot"
             android:layout_below="@+id/login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/textColor"
             android:fontFamily="@font/abhaya_libre_semibold"
-            android:textSize="15dp"
+            android:textSize="15sp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:onClick="Recover" />
 
         <TextView
             android:id="@+id/create"
-            android:text="Criar nova conta!"
+            android:text="@string/txtNewAcc"
             android:layout_marginBottom="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/textColor"
             android:fontFamily="@font/abhaya_libre_semibold"
-            android:textSize="15dp"
+            android:textSize="15sp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:onClick="Create"/>

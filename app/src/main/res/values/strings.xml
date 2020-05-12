@@ -10,7 +10,7 @@
     <string name="btnSend">Enviar E-mail</string>
     <string name="btnLogin">ENTRAR</string>
 
-    <string name="txtSent">Link enviado para</string>
+    <string name="txtSent">Link enviado para </string>
     <string name="txtNewAcc">Criar nova conta</string>
     <string name="txtNext">Próximos</string>
     <string name="txtCpf">Após inserir seu CPF, um link para a redefinição da senha será enviado ao seu E-mail.</string>

@@ -8,7 +8,7 @@
     android:background="@drawable/background">
 
     <ImageButton
-        android:id="@+id/back"
+        android:id="@+id/btn_home_ack"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:background="@null"

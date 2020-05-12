@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,7 +9,7 @@
     android:background="@drawable/background">
 
         <ImageButton
-            android:id="@+id/back"
+            android:id="@+id/btn_createAcc_back"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="@null"
@@ -17,19 +18,5 @@
             app:srcCompat="@drawable/ic_keyboard_arrow_left_black_24dp"
             tools:ignore="MissingConstraints,PrivateResource"
             android:contentDescription="@string/todo" />
-
-        <TextView
-            android:id="@+id/create"
-            android:text="@string/txtNewAcc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/design_default_color_on_primary"
-            android:textStyle="italic"
-            android:textSize="10sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:ignore="MissingConstraints,SmallSp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

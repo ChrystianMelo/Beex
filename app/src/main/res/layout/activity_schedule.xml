@@ -8,7 +8,7 @@
     tools:context=".view.schedule.ScheduleActivity">
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/txt_schedule_next"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -19,11 +19,11 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/backaaaa" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_schedule_back" />
 
 
     <View
-        android:id="@+id/Divisor1"
+        android:id="@+id/v_schedule_divisor"
         android:layout_width="fill_parent"
         android:layout_height="1dip"
         android:layout_marginStart="24dp"
@@ -34,10 +34,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_schedule_next" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerServices"
+        android:id="@+id/rv_schedule_recyclerServices"
         android:layout_width="0dp"
         android:layout_height="500dp"
         android:layout_marginStart="24dp"
@@ -48,10 +48,10 @@
         android:layout_marginBottom="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Divisor1" />
+        app:layout_constraintTop_toBottomOf="@+id/v_schedule_divisor" />
 
     <ImageView
-        android:id="@+id/backaaaa"
+        android:id="@+id/btn_schedule_back"
         android:onClick="goBack"
         android:layout_width="50dp"
         android:layout_height="50dp"

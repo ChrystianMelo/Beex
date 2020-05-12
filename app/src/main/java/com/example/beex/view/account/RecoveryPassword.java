@@ -34,11 +34,11 @@ public class RecoveryPassword extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recover_pass);
 
-        notify = findViewById(R.id.notify);
-        send   = findViewById(R.id.send);
-        back   = findViewById(R.id.back);
-        cpf    =  findViewById(R.id.cpf);
-        cpfLayout = findViewById(R.id.cpfLayout);
+        notify = findViewById(R.id.txt_recoverPass_notify);
+        send   = findViewById(R.id.btn_recoverPass_send);
+        back   = findViewById(R.id.btn_recoverPass_back);
+        cpf    =  findViewById(R.id.tiet_recoverPass_cpf);
+        cpfLayout = findViewById(R.id.til_recoverPass_cpfLayout);
         
         setMaskFieldCPF();
         getArgs();

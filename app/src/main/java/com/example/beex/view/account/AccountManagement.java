@@ -2,7 +2,6 @@ package com.example.beex.view.account;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -10,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-
 import com.example.beex.R;
 import com.example.beex.utils.FieldVerification;
 import com.example.beex.view.schedule.ScheduleActivity;
@@ -34,13 +32,13 @@ public class AccountManagement extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
 
-        icon = findViewById(R.id.icon);
-        screen = findViewById(R.id.screen);
-        mailLayout =  findViewById(R.id.mailLayout);
-        passLayout =  findViewById(R.id.passLayout);
-        mail    =  findViewById(R.id.email);
-        pass    =  findViewById(R.id.pass);
-        login   = findViewById(R.id.login);
+        icon = findViewById(R.id.img_account_icon);
+        screen = findViewById(R.id.ll_account_content);
+        mailLayout =  findViewById(R.id.til_account_mailLayout);
+        passLayout =  findViewById(R.id.til_account_passLayout);
+        mail    =  findViewById(R.id.tiet_account_mail);
+        pass    =  findViewById(R.id.tiet_account_pass);
+        login   = findViewById(R.id.btn_account_login);
 
         //setAnimation();
         setButtonFunctions();

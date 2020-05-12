@@ -16,7 +16,7 @@ public class CreateAccount extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_acc);
 
-        back = findViewById(R.id.back);
+        back = findViewById(R.id.btn_createAcc_back);
 
         setButtonFunctions();
     }

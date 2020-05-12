@@ -8,7 +8,7 @@
     android:background="@drawable/background">
 
         <ImageButton
-            android:id="@+id/back"
+            android:id="@+id/btn_recoverPass_back"
             android:layout_width="@android:dimen/notification_large_icon_width"
             android:layout_height="@android:dimen/notification_large_icon_height"
             android:background="@null"
@@ -19,7 +19,6 @@
             android:contentDescription="@string/todo" />
 
         <LinearLayout
-            android:id="@id/back"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:showDividers="middle"
@@ -33,7 +32,7 @@
             android:layout_marginEnd="@android:dimen/notification_large_icon_width">
 
                 <TextView
-                    android:id="@+id/info"
+                    android:id="@+id/txt_recoverPass_info"
                     android:layout_marginTop="@android:dimen/app_icon_size"
                     android:text="@string/txtCpf"
                     android:layout_width="match_parent"
@@ -44,7 +43,7 @@
                     android:textSize="18sp" />
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/cpfLayout"
+                    android:id="@+id/til_recoverPass_cpfLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/tilCpf"
@@ -53,7 +52,7 @@
                     app:errorEnabled="true"
                     >
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id = "@+id/cpf"
+                            android:id = "@+id/tiet_recoverPass_cpf"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_thin"
@@ -63,7 +62,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
-                    android:id="@+id/send"
+                    android:id="@+id/btn_recoverPass_send"
                     android:text="@string/btnSend"
                     android:layout_width="@android:dimen/thumbnail_height"
                     android:layout_height="wrap_content"
@@ -74,7 +73,7 @@
                     />
 
                 <TextView
-                    android:id="@+id/notify"
+                    android:id="@+id/txt_recoverPass_notify"
                     android:text="@string/txtSent"
                     android:textAlignment="center"
                     android:layout_width="wrap_content"

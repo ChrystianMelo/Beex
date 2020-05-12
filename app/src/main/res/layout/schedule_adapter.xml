@@ -53,10 +53,6 @@
                 android:textAppearance="?attr/textAppearanceBody2"
                 android:textColor="?android:attr/textColorSecondary"
                 android:layout_marginStart="10dp" />
-
         </LinearLayout>
-
     </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,7 +16,7 @@ public class ScheduleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule);
 
-        RecyclerView recyclerView = findViewById(R.id.recyclerServices);
+        RecyclerView recyclerView = findViewById(R.id.rv_schedule_recyclerServices);
         ScheduleAdapter adapter = new ScheduleAdapter();
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);

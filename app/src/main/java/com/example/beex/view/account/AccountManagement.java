@@ -10,11 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
 import com.example.beex.R;
 import com.example.beex.utils.FieldVerification;
-import com.example.beex.view.account.RecoveryPassword;
 import com.example.beex.view.schedule.ScheduleActivity;
 import com.example.beex.view.feed.HomeScreen;
 import com.google.android.material.textfield.TextInputEditText;

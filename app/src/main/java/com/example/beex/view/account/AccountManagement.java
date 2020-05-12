@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.example.beex.R;
@@ -25,7 +26,7 @@ import java.util.Objects;
 public class AccountManagement extends AppCompatActivity {
 
     ImageView icon;
-    RelativeLayout screen;
+    LinearLayout screen;
     TextInputLayout mailLayout, passLayout;
     TextInputEditText mail, pass;
     Button login;
@@ -43,7 +44,7 @@ public class AccountManagement extends AppCompatActivity {
         pass    =  findViewById(R.id.pass);
         login   = findViewById(R.id.login);
 
-        setAnimation();
+        //setAnimation();
         setButtonFunctions();
     }
 

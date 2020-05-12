@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.account.AccountManagement"
-    android:background="@drawable/background">
+    android:background="@drawable/background"
+    tools:context=".view.account.AccountManagement">
 
-    <ImageView
-        android:id="@+id/icon"
-        android:src="@drawable/logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:contentDescription="@string/todo" />
 
-    <RelativeLayout
-        android:id="@+id/screen"
-        android:layout_width="300dp"
+    <LinearLayout
+        android:id="@id/screen"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
-        android:alpha="0"
-        >
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        tools:ignore="MissingConstraints,ScrollViewCount"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/logo"
+            tools:ignore="MissingConstraints"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/mailLayout"
@@ -34,7 +36,6 @@
             android:inputType="textEmailAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@id/passLayout"
             android:focusableInTouchMode="true"
             android:fontFamily="@font/roboto_thin"
             app:errorEnabled="true"
@@ -48,7 +49,6 @@
                 android:inputType="textEmailAddress"
                 android:textColor="@color/textColor"
                 />
-
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -63,7 +63,6 @@
             android:inputType="textPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:fontFamily="@font/roboto_thin"
             app:errorEnabled="true">
 
@@ -78,15 +77,12 @@
 
         <Button
             android:id="@+id/login"
-            android:layout_below = "@+id/passLayout"
             android:text="@string/btnLogin"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_launcher_button"
             android:textColor="@color/textColor"
             android:fontFamily="@font/roboto_thin"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp"
             android:textSize="24sp"
             />
 
@@ -94,28 +90,32 @@
             android:id="@+id/forgotten"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/login"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/abhaya_libre_semibold"
             android:onClick="Recover"
             android:text="@string/txtForgot"
-            android:layout_centerHorizontal="true"
             android:textColor="@color/textColor"
             android:textSize="15sp" />
+    </LinearLayout>
 
-        <TextView
-            android:id="@+id/create"
-            android:text="@string/txtNewAcc"
-            android:layout_marginBottom="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/textColor"
-            android:fontFamily="@font/abhaya_libre_semibold"
-            android:textSize="15sp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:onClick="Create"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            tools:ignore="MissingConstraints,ScrollViewCount"
+            android:gravity="bottom|center_horizontal"
+            android:orientation="vertical">
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/create"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abhaya_libre_semibold"
+                android:onClick="Create"
+                android:text="@string/txtNewAcc"
+                android:textColor="@color/textColor"
+                android:textSize="15sp" />
+        </LinearLayout>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

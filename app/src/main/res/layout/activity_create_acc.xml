@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,24 +11,25 @@
             android:id="@+id/back"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             android:background="@null"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_keyboard_arrow_left_black_24dp"
-            tools:ignore="PrivateResource"
+            tools:ignore="MissingConstraints,PrivateResource"
             android:contentDescription="@string/todo" />
 
         <TextView
             android:id="@+id/create"
             android:text="@string/txtNewAcc"
-            android:layout_marginBottom="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/textColor"
             android:textStyle="italic"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
             android:textSize="10sp"
-            tools:ignore="SmallSp" />
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:ignore="MissingConstraints,SmallSp" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

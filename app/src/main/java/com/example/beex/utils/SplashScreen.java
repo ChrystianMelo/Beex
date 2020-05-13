@@ -13,6 +13,10 @@ public class SplashScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        changeScreen();
+    }
+
+    public void changeScreen(){
         Intent intent = new Intent(this, AccountManagement.class);
         startActivity(intent);
         finish();

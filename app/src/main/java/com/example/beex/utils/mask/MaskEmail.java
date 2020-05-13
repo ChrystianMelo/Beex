@@ -18,6 +18,7 @@ public class MaskEmail {
             newEmail.append(email.substring(position - 1));
         }
 
+
         return newEmail.toString();
     }
 }

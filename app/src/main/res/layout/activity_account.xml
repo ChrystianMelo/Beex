@@ -8,27 +8,40 @@
     tools:context=".view.account.AccountManagement">
 
 
+    <Space
+        android:id="@+id/spc_account_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    <ImageView
+        android:id="@+id/img_account_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/logo"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="10dp"/>
+
+
     <LinearLayout
         android:id="@+id/ll_account_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:ignore="MissingConstraints,ScrollViewCount"
         android:gravity="center"
+        android:alpha="0"
         android:orientation="vertical"
         android:layout_marginLeft="@android:dimen/notification_large_icon_height"
         android:layout_marginRight="@android:dimen/notification_large_icon_width"
         android:layout_marginStart="@android:dimen/notification_large_icon_height"
         android:layout_marginEnd="@android:dimen/notification_large_icon_width">
-
-        <ImageView
-            android:id="@+id/img_account_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/todo"
-            android:src="@drawable/logo"
-            tools:ignore="MissingConstraints"
-            android:layout_marginTop="-20dp"
-            android:layout_marginBottom="10dp"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_account_mailLayout"

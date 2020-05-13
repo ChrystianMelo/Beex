@@ -1,4 +1,4 @@
-package com.example.beex.utils.Mask;
+package com.example.beex.utils.mask.tox;
 
 import android.text.Editable;
 import android.text.TextWatcher;

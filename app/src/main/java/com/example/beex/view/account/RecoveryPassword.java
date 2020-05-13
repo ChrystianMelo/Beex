@@ -7,14 +7,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.beex.R;
-import com.example.beex.utils.FieldVerification;
-import com.example.beex.utils.Mask.MaskEmail;
-import com.example.beex.utils.Mask.MaskTextWatcher;
-import com.example.beex.utils.Mask.SimpleMaskFormatter;
+import com.example.beex.utils.mask.MaskEmail;
+import com.example.beex.utils.mask.tox.MaskTextWatcher;
+import com.example.beex.utils.mask.tox.SimpleMaskFormatter;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -39,30 +37,64 @@ public class RecoveryPassword extends AppCompatActivity {
         back   = findViewById(R.id.btn_recoverPass_back);
         cpf    =  findViewById(R.id.tiet_recoverPass_cpf);
         cpfLayout = findViewById(R.id.til_recoverPass_cpfLayout);
-        
-        setMaskFieldCPF();
-        getArgs();
+
+        String patternCPF = "NNN.NNN.NNN-NN";
+        maskFieldCPF(cpf, patternCPF);
+
+        this.email = getArgs("email");
+        this.email = maskEmail(this.email);
+
         setButtonFunctions();
     }
 
-    private void getArgs() {
+    public String getArgs(String KEY) {
         Intent i = getIntent();
         Bundle extras = i.getExtras();
-        if (extras != null && extras.containsKey("email")) {
-            this.email = i.getStringExtra("email");
+        if (extras != null && extras.containsKey(KEY)) {
+            return i.getStringExtra(KEY);
+        }
+        return "UNKNOWN";
+    }
+
+    public void maskFieldCPF(TextInputEditText field, String pattern){
+        SimpleMaskFormatter smf = new SimpleMaskFormatter(pattern);
+        MaskTextWatcher mtw = new MaskTextWatcher(field,smf);
+        field.addTextChangedListener(mtw);
+    }
+
+    public String maskEmail(String mail){
+        MaskEmail maskedEmail = new MaskEmail();
+        maskedEmail.setEmail(mail);
+        return maskedEmail.emailHidden();
+    }
+
+    public int verification(String field){
+        if (field.isEmpty()) return 0;
+        if(field.length() < 14)
+            return -1;
+        return 1;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    public void setErrorMessages(TextInputEditText txt, TextInputLayout field) {
+        int vf = verification(Objects.requireNonNull(txt.getText()).toString());
+        if (vf == 1) {
+            field.setError(null);
+        } else if (vf == -1) {
+            field.setError("Preencha corretamente");
+        } else if (vf == 0) {
+            field.setError("Campo vazio");
         }
     }
 
-    public void setMaskFieldCPF(){
-        SimpleMaskFormatter smf = new SimpleMaskFormatter("NNN.NNN.NNN-NN");
-        MaskTextWatcher mtw = new MaskTextWatcher(cpf,smf);
-        cpf.addTextChangedListener(mtw);
+    public boolean verifyFields() {
+        return cpfLayout.getError() == null;
     }
 
+    public void cleanErrorMessages(TextInputLayout field) {
+        field.setError(null);
+    }
     public void setButtonFunctions(){
-        MaskEmail me = new MaskEmail(email);//Simulation/No api access
-        final String maskedEmail = me.emailHidden();//Simulation/No api access
-
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,15 +106,11 @@ public class RecoveryPassword extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
-                FieldVerification fv = new FieldVerification();
-                fv.setCpf(Objects.requireNonNull(cpf.getText()).toString());
-
-                if (fv.cpfVerification()){
-                    cpfLayout.setError(null);
+                cleanErrorMessages(cpfLayout);
+                setErrorMessages(cpf,cpfLayout);
+                if(verifyFields()){
                     notify.animate().alpha(1);
-                    notify.append(maskedEmail);
-                }else{
-                    cpfLayout.setError("Digite um cpf válido!");
+                    notify.append("\n'"+email.toString()+"'");
                 }
             }
         });

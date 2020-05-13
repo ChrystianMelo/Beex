@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import com.example.beex.R;
-import com.example.beex.utils.FieldVerification;
 import com.example.beex.view.schedule.ScheduleActivity;
 import com.example.beex.view.feed.HomeScreen;
 import com.google.android.material.textfield.TextInputEditText;
@@ -40,60 +39,65 @@ public class AccountManagement extends AppCompatActivity {
         pass    =  findViewById(R.id.tiet_account_pass);
         login   = findViewById(R.id.btn_account_login);
 
-        //setAnimation();
         setButtonFunctions();
     }
 
-    public void setAnimation() {
-        icon.animate().translationYBy(-500).setDuration(1500);
-        screen.animate().setDuration(2000).alpha(1);
+    public int verification(String field){
+        if (field.isEmpty()) return 0;
+        if ((field.indexOf('.') == -1 &&
+            field.indexOf('@') == -1 )||
+            field.length() == 2)
+                return -1;
+        return 1;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    public void setErrorMessages(TextInputEditText txt, TextInputLayout field) {
+        int vf = verification(Objects.requireNonNull(txt.getText()).toString());
+        if (vf == 1) {
+            field.setError(null);
+        } else if (vf == -1) {
+            field.setError("Resposta inválida");
+        } else if (vf == 0) {
+            field.setError("Campo vazio");
+        }
+    }
+
+    public boolean verifyFields() {
+        return mailLayout.getError() == null &&
+                passLayout.getError() == null;
+    }
+
+    public void cleanErrorMessages(TextInputLayout field) {
+        field.setError(null);
     }
 
     private void setButtonFunctions() {
-        final Intent home = new Intent(this, HomeScreen.class);
+
         login.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.KITKAT)
             @Override
             public void onClick(View v) {
-                FieldVerification fv = new FieldVerification();
-                fv.setEmail(Objects.requireNonNull(mail.getText()).toString());
-                fv.setPass(Objects.requireNonNull(pass.getText()).toString());
-
-                if (fv.emailVerification() && fv.passVerification()){
-                    passLayout.setError(null);
-                    mailLayout.setError(null);
-                    startActivity(home);
-                }else if (!fv.emailVerification() && !fv.passVerification()){
-                    mailLayout.setError("Digite um email válido!");
-                    passLayout.setError("Digite uma senha válida!");
-                }else if (!fv.emailVerification() || !fv.passVerification()){
-                    if (fv.passVerification()) {
-                        mailLayout.setError("Digite um email válido!");
-                        passLayout.setError(null);
-                    }else if (fv.emailVerification()) {
-                        passLayout.setError("Digite uma senha válida!");
-                        mailLayout.setError(null);
-                    }
-                }
+                cleanErrorMessages(mailLayout);
+                cleanErrorMessages(passLayout);
+                setErrorMessages(mail,mailLayout);
+                setErrorMessages(pass,passLayout);
+                if(verifyFields()) startActivity(new Intent(getApplicationContext(), HomeScreen.class));
             }
         });
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void Recover(View v){
-        FieldVerification fv = new FieldVerification();
-        fv.setEmail(Objects.requireNonNull(mail.getText()).toString());
-        if (fv.emailVerification()) {
-                mailLayout.setError(null);
+        cleanErrorMessages(passLayout);
+        setErrorMessages(mail,mailLayout);
+        if (verifyFields()){
                 Intent recover = new Intent(this, RecoveryPassword.class);
                 recover.putExtra("email", mail.getText().toString());
                 startActivity(recover);
-        }else mailLayout.setError("Digite um email válido!");
+        }
     }
 
-    /*public void Create(View v){
-        startActivity(new Intent(this,CreateAccount.class));
-    }*/
 
     public void Create(View v){
         startActivity(new Intent(this, ScheduleActivity.class));

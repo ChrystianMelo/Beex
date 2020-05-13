@@ -19,6 +19,10 @@ public class HomeScreen extends AppCompatActivity {
 
         back = findViewById(R.id.btn_home_ack);
 
+        setButtonFunctions();
+
+    }
+    private void setButtonFunctions() {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

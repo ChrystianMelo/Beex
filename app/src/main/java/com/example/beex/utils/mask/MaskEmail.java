@@ -1,14 +1,10 @@
-package com.example.beex.utils.Mask;
+package com.example.beex.utils.mask;
 
 public class MaskEmail {
     private String email;
 
-    private void setEmail(String email) {
+    public void setEmail(String email) {
         this.email = email;
-    }
-
-    public MaskEmail(String email) {
-        setEmail(email);
     }
 
     public String emailHidden(){
@@ -21,6 +17,7 @@ public class MaskEmail {
                 newEmail.append('*');
             newEmail.append(email.substring(position - 1));
         }
+
         return newEmail.toString();
     }
 }

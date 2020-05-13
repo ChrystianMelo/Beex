@@ -1,4 +1,4 @@
-package com.example.beex.utils.Mask;
+package com.example.beex.utils.mask.tox;
 
 import java.util.HashMap;
 

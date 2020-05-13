@@ -53,19 +53,19 @@ public class AccountManagement extends AppCompatActivity {
         topOfScreen.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
-                int[] pos = new int[2];
+                int[] local = new int[2];
                 topOfScreen.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-                topOfScreen.getLocationOnScreen(pos);
+                topOfScreen.getLocationOnScreen(local);
                 if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
-                    setAnimation(-1*pos[0]/2);
+                    setAnimation(-1*local[0]/2);
                 else
-                    setAnimation(-1*pos[0]);
+                    setAnimation(-1*local[0]);
             }
         });
     }
 
-    public void setAnimation(int y) {
-        icon.animate().translationYBy(Math.round(y*0.9)).setDuration(1500);
+    public void setAnimation(int height) {
+        icon.animate().translationYBy(Math.round(height*0.9)).setDuration(1500);
         screen.animate().setDuration(2500).alpha(1);
     }
 
@@ -120,7 +120,7 @@ public class AccountManagement extends AppCompatActivity {
         setErrorMessages(mail,mailLayout);
         if (verifyFields()){
                 Intent recover = new Intent(this, RecoveryPassword.class);
-                recover.putExtra("email", mail.getText().toString());
+                recover.putExtra("email", Objects.requireNonNull(mail.getText()).toString());
                 startActivity(recover);
         }
     }

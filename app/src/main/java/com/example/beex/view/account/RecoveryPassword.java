@@ -26,6 +26,15 @@ public class RecoveryPassword extends AppCompatActivity {
     TextInputLayout cpfLayout;
     TextInputEditText cpf;
     String email;
+    String patternCPF = "NNN.NNN.NNN-NN";
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getEmail() {
+        return email;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +47,10 @@ public class RecoveryPassword extends AppCompatActivity {
         cpf    =  findViewById(R.id.tiet_recoverPass_cpf);
         cpfLayout = findViewById(R.id.til_recoverPass_cpfLayout);
 
-        String patternCPF = "NNN.NNN.NNN-NN";
         maskFieldCPF(cpf, patternCPF);
 
-        this.email = getArgs("email");
-        this.email = maskEmail(this.email);
+        setEmail(getArgs("email"));
+        setEmail(maskEmail(getEmail()));
 
         setButtonFunctions();
     }
@@ -110,7 +118,8 @@ public class RecoveryPassword extends AppCompatActivity {
                 setErrorMessages(cpf,cpfLayout);
                 if(verifyFields()){
                     notify.animate().alpha(1);
-                    notify.append("\n'"+email.toString()+"'");
+                    notify.append("\n'"+email+"'");
+                    send.setClickable(false);
                 }
             }
         });

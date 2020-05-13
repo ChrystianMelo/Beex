@@ -40,6 +40,7 @@ public class AccountManagement extends AppCompatActivity {
         login   = findViewById(R.id.btn_account_login);
 
         setButtonFunctions();
+
     }
 
     public int verification(String field){

@@ -39,7 +39,7 @@
             android:id="@+id/spc_account_top"
             android:visibility="invisible"
             tools:ignore="NotSibling"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:layout_width="wrap_content" />
 
         <com.google.android.material.textfield.TextInputLayout

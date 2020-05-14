@@ -2,6 +2,8 @@ package com.example.beex.view.account;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Build;
@@ -26,7 +28,7 @@ import java.util.Objects;
 public class AccountManagement extends AppCompatActivity {
 
     ImageView icon;
-    LinearLayout screen;
+    ConstraintLayout screen;
     TextInputLayout mailLayout, passLayout;
     TextInputEditText mail, pass;
     Space topOfScreen;

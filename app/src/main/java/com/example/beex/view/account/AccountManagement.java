@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
@@ -53,19 +54,20 @@ public class AccountManagement extends AppCompatActivity {
         topOfScreen.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
-                int[] local = new int[2];
+                int local;
                 topOfScreen.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-                topOfScreen.getLocationOnScreen(local);
+                local = icon.getBottom() - topOfScreen.getBottom();
+                Log.d("X and Y Point", local + " ");
                 if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
-                    setAnimation(-1*local[0]/2);
+                    setAnimation(-1*local);
                 else
-                    setAnimation(-1*local[0]);
+                    setAnimation(-1*local);
             }
         });
     }
 
     public void setAnimation(int height) {
-        icon.animate().translationYBy(Math.round(height*0.9)).setDuration(1500);
+        icon.animate().translationY(Math.round(height)).setDuration(1500);
         screen.animate().setDuration(2500).alpha(1);
     }
 
